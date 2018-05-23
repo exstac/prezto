@@ -11,3 +11,32 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+#export VIRTUALENVWRAPPER_PYTHON=$(brew --prefix)/bin/python
+#if [ -f $(brew --prefix)/bin/virtualenvwrapper.sh ]; then
+#  . $(brew --prefix)/bin/virtualenvwrapper.sh
+#fi
+
+# path
+#export PATH="$PATH:/Users/oscar/projects/google-cloud-sdk/bin"
+#export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+# Env
+export GITHUB_URL=https://ghe.spotify.net
+export EDITOR='emacs'
+export VISUAL='emacs'
+export PAGER='less'
+
+# Init Google Cloud SDK
+#source '/Users/oscar/.google-cloud-sdk/google-cloud-sdk/path.zsh.inc'
+#source '/Users/oscar/.google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'
+
+# Update PATH for the Google Cloud SDK and setup autocomplete
+#if [ -f '/Users/oscar/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/oscar/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/oscar/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/oscar/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# aliases
+alias spp2p="lsof -i -n -l|grep Spotify|cut -d\">\" -f2|cut -d\" \" -f1|cut -d\":\" -f1|grep \\[0-9\\]|nslookup -timeout=1 $1|grep \"name =\"|cut -d \"=\" -f2|sort|sed s/.$//"
+
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
